@@ -291,7 +291,53 @@
     footer a { color: var(--muted); text-decoration: none; margin: 0 0.5rem; }
     footer a:hover { color: var(--accent); }
 
-    /* ── RESPONSIVE ── */
+    /* ── MODALS ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(10, 15, 22, 0.88);
+      backdrop-filter: blur(6px);
+      align-items: center; justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; max-width: 760px; width: 100%;
+      max-height: 85vh; overflow-y: auto;
+      padding: 2.5rem 2.8rem;
+      position: relative;
+    }
+    .modal::-webkit-scrollbar { width: 5px; }
+    .modal::-webkit-scrollbar-track { background: var(--bg-deep); }
+    .modal::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 3px; }
+    .modal-close {
+      position: sticky; top: 0; float: right;
+      background: none; border: 1px solid var(--border);
+      color: var(--muted); font-size: 1.2rem; cursor: pointer;
+      width: 34px; height: 34px; border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+      margin-bottom: 1rem;
+    }
+    .modal-close:hover { border-color: var(--accent); color: var(--accent); }
+    .modal h1 {
+      font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
+      letter-spacing: 0.06em; color: var(--white); margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border); padding-bottom: 0.8rem;
+    }
+    .modal h2 {
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem;
+      letter-spacing: 0.05em; color: var(--accent);
+      margin: 1.8rem 0 0.5rem;
+    }
+    .modal h3 { font-size: 0.95rem; color: var(--white); margin: 1.2rem 0 0.4rem; font-weight: 600; }
+    .modal p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.6rem; }
+    .modal ul { color: var(--muted); font-size: 0.9rem; padding-left: 1.4rem; line-height: 1.7; margin-bottom: 0.6rem; }
+    .modal strong { color: var(--white); }
+    .modal a { color: var(--accent); }
+    .modal hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+
     @media (max-width: 700px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -499,14 +545,127 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Glanzfahrt – Autowaschstraße Lübeck &nbsp;·&nbsp;
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
-      <a href="#">AGB</a>
+    <p>© <span id="footer-year"></span> Glanzfahrt – Autowaschstraße Lübeck &nbsp;·&nbsp;
+      <a href="#" onclick="document.getElementById('modal-impressum').classList.add('open'); return false;">Impressum &amp; Datenschutz</a>
+      <a href="#" onclick="document.getElementById('modal-agb').classList.add('open'); return false;">AGB</a>
     </p>
   </footer>
 
+  <!-- MODAL: Impressum & Datenschutz -->
+  <div class="modal-overlay" id="modal-impressum" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('modal-impressum').classList.remove('open')">✕</button>
+
+      <h1>Impressum</h1>
+      <p><strong>Autowaschstraße Glanzfahrt UG</strong><br>
+      Wesloer Landstraße 50–70<br>
+      23566 Lübeck</p>
+      <p><strong>Vertreten durch:</strong><br>Islam Sindi und Salam Sindi</p>
+      <p><strong>Kontakt:</strong><br>
+      Telefon: <a href="tel:+4945164043">+49 451 64043</a><br>
+      E-Mail: <a href="mailto:kontakt@glanz-fahrt.de">kontakt@glanz-fahrt.de</a></p>
+      <p><strong>Umsatzsteuer-ID:</strong><br>
+      Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: [USt-IdNr. eintragen]</p>
+      <p><strong>EU-Streitschlichtung:</strong><br>
+      Die Europäische Kommission stellt Informationen zur außergerichtlichen Streitbeilegung bereit:
+      <a href="https://consumer-redress.ec.europa.eu/" target="_blank">consumer-redress.ec.europa.eu</a><br>
+      Hinweis: Die frühere EU-Online-Streitbeilegungsplattform (OS/ODR) wurde zum 20. Juli 2025 eingestellt.</p>
+
+      <hr>
+
+      <h1>Datenschutzerklärung</h1>
+
+      <h2>1. Datenschutz auf einen Blick</h2>
+      <p>Wir freuen uns über Ihren Besuch auf unserer Webseite. Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie darüber, welche Daten wir während Ihres Besuchs erfassen.</p>
+
+      <h2>2. Verantwortliche Stelle</h2>
+      <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
+      Autowaschstraße Glanzfahrt UG<br>
+      Wesloer Landstraße 50–70, 23566 Lübeck<br>
+      E-Mail: <a href="mailto:kontakt@glanz-fahrt.de">kontakt@glanz-fahrt.de</a></p>
+
+      <h2>3. Datenerfassung auf unserer Website</h2>
+      <h3>Server-Log-Dateien</h3>
+      <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt:</p>
+      <ul>
+        <li>Browsertyp und Browserversion</li>
+        <li>Verwendetes Betriebssystem</li>
+        <li>Referrer URL</li>
+        <li>Hostname des zugreifenden Rechners</li>
+        <li>Uhrzeit der Serveranfrage</li>
+        <li>IP-Adresse</li>
+      </ul>
+      <p>Diese Daten sind notwendig, um die Sicherheit und Stabilität unserer Website zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+      <h3>Kontaktformular / E-Mail-Kontakt</h3>
+      <p>Wenn Sie uns per E-Mail Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter (Art. 6 Abs. 1 lit. b DSGVO).</p>
+
+      <h2>4. Ihre Rechte</h2>
+      <ul>
+        <li>Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+        <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+        <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
+        <li>Beschwerde bei einer Aufsichtsbehörde</li>
+      </ul>
+
+      <h2>5. Datensicherheit</h2>
+      <p>Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie am „https://" in der Adresszeile.</p>
+      <p style="margin-top:1.5rem; font-size:0.8rem;">© 2026 Autowaschstraße Glanzfahrt UG Lübeck. Stand: Januar 2026.</p>
+    </div>
+  </div>
+
+  <!-- MODAL: AGB -->
+  <div class="modal-overlay" id="modal-agb" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('modal-agb').classList.remove('open')">✕</button>
+
+      <h1>Allgemeine Geschäftsbedingungen</h1>
+      <p><strong>Autowaschstrasse Glanzfahrt UG</strong></p>
+
+      <h2>1. Geltungsbereich</h2>
+      <p>Die Fahrzeugwäsche erfolgt ausschließlich unter Zugrundelegung der nachstehenden Bedingungen. Mit der Benutzung der Waschstraße erkennt der Benutzer diese Bedingungen an.</p>
+
+      <h2>2. Leistungen des Waschstraßenbetreibers</h2>
+      <p>Der Betreiber gewährleistet eine den allgemein anerkannten technischen Standards entsprechende, ordnungsgemäße und schonende Reinigung der Fahrzeuge. Bei berechtigten Beanstandungen ist der Benutzer verpflichtet, diese unverzüglich nach Verlassen der Anlage zu melden. Nachträgliche Reklamationen können nicht berücksichtigt werden.</p>
+
+      <h2>3. Pflichten des Benutzers</h2>
+      <p>Der Benutzer hat die Bedienungs- und Einfahranweisungen des Betreibers und des Personals sowie die auf Hinweisschildern angegebenen Vorschriften strikt zu befolgen. Er ist verpflichtet, den Betreiber vor der Einfahrt auf alle Umstände hinzuweisen, die eine Beschädigung des Fahrzeugs verursachen könnten (z. B. defekte Fahrzeugteile, nachgerüstete Anbauten, Antennen, Dachgepäckträger, Spoiler, lose Teile etc.).</p>
+
+      <h2>4. Haftung des Betreibers</h2>
+      <p>Der Betreiber haftet nur für Schäden, die nachweislich auf grobe Fahrlässigkeit oder Vorsatz seinerseits zurückzuführen sind. Für Schäden, die durch Nichtbeachtung der Benutzungs- oder Einfahrhinweise entstehen, wird keine Haftung übernommen.</p>
+
+      <h2>5. Haftungsausschlüsse</h2>
+      <p>Von der Haftung ausgeschlossen sind insbesondere:</p>
+      <ul>
+        <li>Schäden an außen angebrachten Fahrzeugteilen (z. B. Zierleisten, Spiegel, Spoiler, Antennen, Kennzeichenhalter, Sensoren, Kameras etc.)</li>
+        <li>Lack-, Kratz- oder Folienbeschädigungen, soweit sie nicht auf grobes Verschulden des Betreibers zurückzuführen sind</li>
+        <li>Schäden an Fahrzeugen mit unzureichend befestigten oder nicht serienmäßigen Bauteilen</li>
+        <li>Schäden durch Nichtbeachtung der maximal zulässigen Fahrzeugmaße oder der Bodenfreiheit</li>
+        <li>Wassereintritt bei undichten Fahrzeugen (z. B. durch defekte Dichtungen, Schiebedächer, Cabrioverdecke etc.)</li>
+      </ul>
+
+      <h2>6. Verhalten in der Anlage</h2>
+      <p>Während der Wäsche ist das Fahrzeug im Leerlauf bzw. Stellung „N" zu schalten, nicht zu bremsen, nicht zu lenken und den Motor nicht laufen zu lassen, sofern dies vom Personal angeordnet ist. Das Betreten der Waschstraße während des Betriebs ist untersagt.</p>
+
+      <h2>7. Schadensmeldung</h2>
+      <p>Etwaige Schäden sind unverzüglich vor Verlassen des Betriebsgeländes dem Anlagenpersonal oder Betreiber mitzuteilen. Später gemeldete Schäden können nicht berücksichtigt werden. Das Fahrzeug ist dem Betreiber zur Überprüfung zur Verfügung zu stellen.</p>
+
+      <h2>8. Haftung des Benutzers</h2>
+      <p>Der Benutzer haftet für Schäden, die durch Missachtung der Benutzungsregeln oder Anweisungen, durch ungeeignete Fahrzeugtechnik oder durch sonstiges Fehlverhalten verursacht werden.</p>
+
+      <h2>9. Gerichtsstand</h2>
+      <p>Gerichtsstand für alle Ansprüche aus dem Vertragsverhältnis ist der Sitz der Waschstraße.</p>
+
+      <h2>10. Salvatorische Klausel</h2>
+      <p>Sollte eine Bestimmung dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>
+      <p style="margin-top:1.5rem; font-size:0.8rem;">© 2026 Autowaschstrasse Glanzfahrt UG. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+
   <script>
+    // Footer year
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
     // Animated rain drops
     const container = document.getElementById('drops');
     const count = 35;
