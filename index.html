@@ -361,10 +361,113 @@
     .modal a { color: var(--accent); }
     .modal hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 26px; height: 2px;
+      background: var(--white); border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: rgba(20,28,40,0.98); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      flex-direction: column; padding: 1.5rem 2rem; gap: 1.2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--muted); text-decoration: none; font-size: 1rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s; padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    /* ── BEWERTUNGEN ── */
+    .bewertungen-bg { background: var(--bg-deep); }
+    .stars { color: #f5c518; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 0.4rem; }
+    .bewertungen-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem; margin-top: 3rem;
+    }
+    .bewertung-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1.6rem; transition: border-color 0.2s;
+    }
+    .bewertung-card:hover { border-color: var(--accent); }
+    .bewertung-text { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; font-style: italic; }
+    .bewertung-autor { color: var(--accent); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .google-rating-box {
+      display: flex; align-items: center; gap: 1.5rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 6px; padding: 1.4rem 2rem; margin-top: 2.5rem; flex-wrap: wrap;
+    }
+    .google-rating-score { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--white); line-height: 1; }
+    .google-rating-info { flex: 1; min-width: 160px; }
+    .google-rating-info .stars { font-size: 1.4rem; }
+    .google-rating-info p { color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem; }
+    .btn-outline {
+      display: inline-block; padding: 0.7rem 1.6rem;
+      border: 1px solid var(--accent); color: var(--accent);
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none; border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--accent); color: #0d1820; }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: border-color 0.2s; }
+    .faq-item.open { border-color: var(--accent); }
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 1.6rem; cursor: pointer;
+      color: var(--white); font-size: 0.97rem; font-weight: 500; user-select: none;
+    }
+    .faq-icon { font-size: 1.3rem; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s;
+      color: var(--muted); font-size: 0.9rem; line-height: 1.7; padding: 0 1.6rem;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 1.6rem 1.2rem; }
+
+    /* ── DSGVO MAP ── */
+    .map-consent {
+      background: var(--bg-deep); border: 1px solid var(--border);
+      border-radius: 6px; padding: 2rem; text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+      min-height: 220px; justify-content: center;
+    }
+    .map-consent p { color: var(--muted); font-size: 0.88rem; max-width: 400px; line-height: 1.6; }
+    .map-consent .map-icon { font-size: 2.5rem; }
+    #map-iframe-container { display: none; }
+
+    /* ── BACK TO TOP ── */
+    #back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 150;
+      width: 44px; height: 44px; border-radius: 4px;
+      background: var(--accent); color: #0d1820;
+      border: none; cursor: pointer; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s;
+      box-shadow: 0 4px 16px rgba(58,168,193,0.3);
+    }
+    #back-to-top.visible { opacity: 1; pointer-events: all; }
+    #back-to-top:hover { transform: translateY(-2px); }
 
     @media (max-width: 700px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
       .kontakt-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       section { padding: 3.5rem 1.5rem; }
     }
@@ -380,11 +483,27 @@
     <ul class="nav-links">
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#preise">Preise</a></li>
+      <li><a href="#bewertungen">Bewertungen</a></li>
+      <!-- <li><a href="#faq">FAQ</a></li> -->
       <li><a href="#social">Social Media</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="#anfahrt">Anfahrt</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#leistungen" onclick="closeMobileMenu()">Leistungen</a>
+    <a href="#preise" onclick="closeMobileMenu()">Preise</a>
+    <a href="#bewertungen" onclick="closeMobileMenu()">Bewertungen</a>
+    <!-- <a href="#faq">FAQ</a> -->
+    <a href="#social" onclick="closeMobileMenu()">Social Media</a>
+    <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
+    <a href="#anfahrt" onclick="closeMobileMenu()">Anfahrt</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
@@ -531,6 +650,105 @@
 
   <div class="wash-line"></div>
 
+  <!-- BEWERTUNGEN -->
+  <section class="bewertungen-bg" id="bewertungen">
+    <div class="container">
+      <p class="section-label">Was unsere Kunden sagen</p>
+      <h2 class="section-title">Google Bewertungen</h2>
+      <p class="section-text">Echte Meinungen unserer Kunden – direkt von Google Maps.</p>
+
+      <div class="google-rating-box">
+        <div class="google-rating-score">4.9</div>
+        <div class="google-rating-info">
+          <div class="stars">★★★★★</div>
+          <p>Basierend auf Google Bewertungen</p>
+        </div>
+        <a href="https://www.google.com/maps/place/Autowaschstra%C3%9Fe+Glanzfahrt+UG/@53.8709082,10.7470631,20z/data=!4m6!3m5!1s0x47b20a2f4dca746d:0x3f0fc5aa233064a2!8m2!3d53.8708945!4d10.7471055!16s%2Fg%2F11g8703ngq" target="_blank" class="btn-outline">
+          Alle Bewertungen ansehen
+        </a>
+      </div>
+
+      <div class="bewertungen-grid">
+        <div class="bewertung-card">
+          <div class="stars">★★★★★</div>
+          <p class="bewertung-text">„Früher sah die Autowaschanlage ehrlich gesagt aus wie ein kleines Kaff – alles wirkte alt und ungepflegt. Seitdem jedoch der neue Besitzer übernommen hat, hat sich hier einfach alles verändert. Er hat alles komplett erneuert und modernisiert. Die Anlage ist jetzt sauber, modern und absolut professionell. Das Waschergebnis ist top, das Personal freundlich und man fühlt sich als Kunde wirklich willkommen. Man merkt sofort, dass hier viel Wert auf Qualität und Kundenzufriedenheit gelegt wird. Wenn es eine 6-Sterne-Bewertung gäbe, würde ich definitiv 6 Sterne geben! Absolute Empfehlung 🚗✨"</p>
+          <div class="bewertung-autor">— Google Rezension</div>
+        </div>
+        <div class="bewertung-card">
+          <div class="stars">★★★★★</div>
+          <p class="bewertung-text">„Ich war letzte Woche mit meinem sehr schmutzigen, weißen Auto dort und es hatte eine Extrabehandlung bekommen, wurde ordentlich geschrubbt vor der eigentlichen Wäsche und glänzt jetzt wieder! Alle waren sehr freundlich und bemüht, ich fahre gerne wieder hin!"</p>
+          <div class="bewertung-autor">— Google Rezension</div>
+        </div>
+        <div class="bewertung-card">
+          <div class="stars">★★★★☆</div>
+          <p class="bewertung-text">„Nett, höflich und zuvorkommend. Faire Preise und das Auto wurde sauber. Unterstütze ich gerne weiter."</p>
+          <div class="bewertung-autor">— Google Rezension</div>
+        </div>
+      </div>
+      <p style="color:var(--muted); font-size:0.78rem; margin-top:1.5rem; text-align:center;">
+        Echte Bewertungen unserer Kunden von Google Maps.
+      </p>
+    </div>
+  </section>
+
+  <div class="wash-line"></div>
+
+  <!-- FAQ -->
+  <section id="faq" style="display:none;">
+    <div class="container">
+      <p class="section-label">Häufige Fragen</p>
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-text">Antworten auf die häufigsten Fragen rund um unsere Waschstraße.</p>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Muss ich während der Wäsche im Auto bleiben?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Ja, müssen während der Wäsche im Fahrzeug sitzen bleiben. Bitte schalten Sie das Fahrzeug in den Leerlauf (Automatik: „N"), klappen Sie die Seitenspiegel ein, halten Sie das Lenkrad gerade und betätigen Sie weder Gas noch Bremse.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Welche Zahlungsmittel werden akzeptiert?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Wir akzeptieren Barzahlung sowie gängige EC- und Kreditkarten. Für aktuelle Informationen zu Zahlungsmöglichkeiten kontaktieren Sie uns gerne direkt.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Was passiert, wenn mein Auto beschädigt wird?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Bitte melden Sie eventuelle Schäden sofort nach der Wäsche vor Verlassen des Geländes beim Personal. Nachträgliche Meldungen können leider nicht berücksichtigt werden. Unsere AGB regeln die Haftung im Detail.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Ist die Waschstraße für alle Fahrzeuggrößen geeignet?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Unsere Waschstraße ist für PKW und kleinere SUVs geeignet. Bitte beachten Sie die maximalen Fahrzeugmaße an der Einfahrt. Bei Unsicherheiten fragen Sie gerne unser Personal.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Wie lange dauert eine Wäsche?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Eine komplette Wäsche dauert je nach Paket zwischen 3 und 6 Minuten. Wartezeiten können zu Stoßzeiten (Samstags, nach Regen) etwas länger sein.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Kann ich mit einem Cabriolet oder Anhänger fahren?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Cabrios sind erlaubt, sofern das Verdeck vollständig geschlossen und dicht ist. Fahrzeuge mit Anhänger können leider nicht gewaschen werden. Bitte koppeln Sie den Anhänger vorher ab.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wash-line"></div>
+
   <!-- KONTAKT & ÖFFNUNGSZEITEN -->
   <section class="kontakt-bg" id="kontakt">
     <div class="container">
@@ -581,12 +799,17 @@
         <!-- MAP -->
         <div id="anfahrt">
           <div class="info-label" style="margin-bottom:0.8rem">Anfahrt</div>
-          <div class="map-wrapper">
+          <div id="map-consent-box" class="map-wrapper">
+            <div class="map-consent">
+              <div class="map-icon">🗺️</div>
+              <p>Diese Karte wird von Google Maps bereitgestellt. Durch das Laden werden Daten an Google übertragen. Mehr dazu in unserer <a href="#" onclick="document.getElementById('modal-datenschutz').classList.add('open'); return false;">Datenschutzerklärung</a>.</p>
+              <button class="btn-primary" onclick="loadMap()">Karte laden & zustimmen</button>
+            </div>
+          </div>
+          <div id="map-iframe-container" class="map-wrapper">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d489.71!2d10.7471055!3d53.8708945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b20a2f4dca746d%3A0x3f0fc5aa233064a2!2sAutowaschstra%C3%9Fe%20Glanzfahrt%20UG!5e0!3m2!1sde!2sde!4v1699999999999!5m2!1sde!2sde"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
+              style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Standort Glanzfahrt Lübeck">
             </iframe>
@@ -617,63 +840,95 @@
     <div class="modal">
       <button class="modal-close" onclick="document.getElementById('modal-impressum').classList.remove('open')">✕</button>
       <h1>Impressum</h1>
-      <p><strong>Autowaschstraße Glanzfahrt UG</strong><br>
-      Wesloer Landstraße 50–70<br>
+
+      <h2>Autowaschstraße Glanzfahrt UG (haftungsbeschränkt)</h2>
+      <p>Wesloer Landstraße 50–70<br>
       23566 Lübeck</p>
-      <p><strong>Vertreten durch:</strong><br>Islam Sindi und Salam Sindi</p>
-      <p><strong>Kontakt:</strong><br>
-      Telefon: <a href="tel:+4945164043">+49 451 64043</a><br>
+
+      <h2>Vertreten durch</h2>
+      <p>Islam Sindi und Salam Sindi</p>
+
+      <h2>Registereintrag</h2>
+      <p>Eingetragen im Handelsregister.<br>
+      Registergericht: Amtsgericht Lübeck<br>
+      Registernummer: HRB 17833 HL<br>
+      EUID: DEX1721R.HRB17833HL</p>
+
+      <h2>Kontakt</h2>
+      <p>Telefon: <a href="tel:+4945164043">+49 451 64043</a><br>
       E-Mail: <a href="mailto:kontakt@glanz-fahrt.de">kontakt@glanz-fahrt.de</a></p>
-      <p><strong>Umsatzsteuer-ID:</strong><br>
-      Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: [USt-IdNr. eintragen]</p>
-      <p><strong>EU-Streitschlichtung:</strong><br>
-      Die Europäische Kommission stellt Informationen zur außergerichtlichen Streitbeilegung bereit:
-      <a href="https://consumer-redress.ec.europa.eu/" target="_blank">consumer-redress.ec.europa.eu</a><br>
-      Hinweis: Die frühere EU-Online-Streitbeilegungsplattform (OS/ODR) wurde zum 20. Juli 2025 eingestellt.</p>
+
+      <h2>Umsatzsteuer-ID</h2>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>
+      [Hier bitte Ihre USt-IdNr. eintragen]</p>
+
+      <h2>EU-Streitschlichtung</h2>
+      <p>Die Europäische Kommission stellt Informationen zur außergerichtlichen Streitbeilegung bereit:<br>
+      <a href="https://consumer-redress.ec.europa.eu" target="_blank">consumer-redress.ec.europa.eu</a><br>
+      <strong>Hinweis:</strong> Die frühere EU-Online-Streitbeilegungsplattform (OS/ODR) wurde zum 20. Juli 2025 eingestellt.</p>
+
+      <h2>Verbraucherschlichtung</h2>
+      <p>Wir sind nicht verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen, und wir nehmen daran auch nicht teil.</p>
+
       <p style="margin-top:1.5rem; font-size:0.8rem;">© 2026 Autowaschstraße Glanzfahrt UG Lübeck. Stand: Januar 2026.</p>
     </div>
   </div>
 
-  <!-- MODAL: Datenschutz -->
+    <!-- MODAL: Datenschutz -->
   <div class="modal-overlay" id="modal-datenschutz" onclick="if(event.target===this)this.classList.remove('open')">
     <div class="modal">
       <button class="modal-close" onclick="document.getElementById('modal-datenschutz').classList.remove('open')">✕</button>
       <h1>Datenschutzerklärung</h1>
+
       <h2>1. Datenschutz auf einen Blick</h2>
-      <p>Wir freuen uns über Ihren Besuch auf unserer Webseite. Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie darüber, welche Daten wir während Ihres Besuchs erfassen.</p>
+      <p>Wir freuen uns über Ihren Besuch auf unserer Webseite. Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie darüber, wie wir Ihre personenbezogenen Daten bei der Nutzung unserer Website verarbeiten.</p>
+
       <h2>2. Verantwortliche Stelle</h2>
       <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
       Autowaschstraße Glanzfahrt UG<br>
       Wesloer Landstraße 50–70, 23566 Lübeck<br>
       E-Mail: <a href="mailto:kontakt@glanz-fahrt.de">kontakt@glanz-fahrt.de</a></p>
+
       <h2>3. Datenerfassung auf unserer Website</h2>
-      <h3>Server-Log-Dateien</h3>
-      <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt:</p>
+
+      <h3>Hosting via GitHub Pages (Server-Log-Dateien)</h3>
+      <p>Diese Website wird über den Dienst „GitHub Pages" der Firma GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA, gehostet. Beim Aufruf unserer Website erhebt und speichert der Hoster automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch übermittelt:</p>
       <ul>
         <li>Browsertyp und Browserversion</li>
         <li>Verwendetes Betriebssystem</li>
-        <li>Referrer URL</li>
+        <li>Referrer URL (die zuvor besuchte Seite)</li>
         <li>Hostname des zugreifenden Rechners</li>
         <li>Uhrzeit der Serveranfrage</li>
         <li>IP-Adresse</li>
       </ul>
-      <p>Diese Daten sind notwendig, um die Sicherheit und Stabilität unserer Website zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
-      <h3>Kontaktformular / E-Mail-Kontakt</h3>
-      <p>Wenn Sie uns per E-Mail Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter (Art. 6 Abs. 1 lit. b DSGVO).</p>
+      <p>Wir als Betreiber dieser Website haben keinen Zugriff auf diese Log-Dateien und verarbeiten diese Daten nicht weiter. Die Datenerhebung erfolgt durch GitHub zur Sicherstellung des Betriebs und der Sicherheit der Hosting-Infrastruktur. Weitere Informationen finden Sie in der Datenschutzerklärung von GitHub: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement" target="_blank">github.com/privacy</a>.</p>
+
+      <h3>Google Maps</h3>
+      <p>Wir binden auf unserer Website Kartenmaterial des Dienstes „Google Maps" ein, um Ihnen unseren Standort anzuzeigen. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+      <p>Die Einbindung von Google Maps erfolgt erst nach Ihrer ausdrücklichen Einwilligung (Rechtsgrundlage Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen. Sobald Sie eingewilligt haben, ist es für die Nutzung der Funktionen von Google Maps notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Wir haben nach der Aktivierung keinen Einfluss auf diese Datenübertragung.</p>
+
+      <h3>Kontakt per E-Mail</h3>
+      <p>Wenn Sie uns per E-Mail Anfragen zukommen lassen, werden Ihre Angaben zwecks Bearbeitung der Anfrage gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter (Rechtsgrundlage Art. 6 Abs. 1 lit. b DSGVO).</p>
+
       <h2>4. Ihre Rechte</h2>
+      <p>Sie haben jederzeit das Recht auf:</p>
       <ul>
         <li>Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
         <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
         <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
-        <li>Beschwerde bei einer Aufsichtsbehörde</li>
+        <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        <li>Beschwerde bei einer Aufsichtsbehörde, wenn Sie der Ansicht sind, dass die Datenverarbeitung gegen datenschutzrechtliche Bestimmungen verstößt (Art. 77 DSGVO)</li>
       </ul>
+      <p>Da wir als Betreiber der Website keine personenbezogenen Daten in einer eigenen Datenbank speichern oder verarbeiten, können diese Rechte in der Praxis durch uns nur insoweit erfüllt werden, als sie unsere E-Mail-Kommunikation betreffen. Wir haben keinen Zugriff auf die vom Hoster (GitHub) erhobenen Daten.</p>
+
       <h2>5. Datensicherheit</h2>
       <p>Diese Seite nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie am „https://" in der Adresszeile.</p>
       <p style="margin-top:1.5rem; font-size:0.8rem;">© 2026 Autowaschstraße Glanzfahrt UG Lübeck. Stand: Januar 2026.</p>
     </div>
   </div>
 
-  <!-- MODAL: AGB -->
+    <!-- MODAL: AGB -->
   <div class="modal-overlay" id="modal-agb" onclick="if(event.target===this)this.classList.remove('open')">
     <div class="modal">
       <button class="modal-close" onclick="document.getElementById('modal-agb').classList.remove('open')">✕</button>
@@ -721,9 +976,44 @@
     </div>
   </div>
 
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben">↑</button>
+
   <script>
     // Footer year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+
+    // FAQ toggle
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // DSGVO Map
+    function loadMap() {
+      document.getElementById('map-consent-box').style.display = 'none';
+      document.getElementById('map-iframe-container').style.display = 'block';
+    }
+
+    // Back to top
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
 
     // Animated rain drops
     const container = document.getElementById('drops');
