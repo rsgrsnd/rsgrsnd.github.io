@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glanzfahrt – Autowaschstraße Lübeck</title>
+  <meta name="description" content="Glanzfahrt – Lübecks Autowaschstraße mit intensiver Hochdruck-Vorwäsche. Vier Waschpakete von 10,50 € bis 20,00 €. Wesloer Landstraße 50–70, 23566 Lübeck.">
+
+  <!-- Open Graph / Facebook, WhatsApp, LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.glanz-fahrt.de/">
+  <meta property="og:title" content="Glanzfahrt – Meine Autowaschstraße in Lübeck">
+  <meta property="og:description" content="Intensive Hochdruck-Vorwäsche, faire Preise und ein makelloses Ergebnis. Jetzt Waschpaket wählen.">
+  <meta property="og:image" content="https://www.glanz-fahrt.de/images/android-chrome-512x512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Glanzfahrt">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Glanzfahrt – Meine Autowaschstraße in Lübeck">
+  <meta name="twitter:description" content="Intensive Hochdruck-Vorwäsche, faire Preise und ein makelloses Ergebnis. Jetzt Waschpaket wählen.">
+  <meta name="twitter:image" content="https://www.glanz-fahrt.de/images/android-chrome-512x512.png">
+
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
@@ -23,7 +42,10 @@
   <!-- NAV -->
   <nav>
     <a href="#home" class="nav-logo">
-      <img src="images/logo-nav.png" alt="Glanzfahrt Logo">
+      <picture>
+        <source srcset="images/logo-nav.webp" type="image/webp">
+        <img src="images/logo-nav.png" alt="Glanzfahrt Logo">
+      </picture>
     </a>
     <ul class="nav-links">
       <li><a href="#leistungen">Leistungen</a></li>
@@ -53,7 +75,10 @@
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="drops" id="drops"></div>
-    <img src="images/logo-hero.png" alt="Glanzfahrt Logo" class="hero-logo">
+    <picture>
+      <source srcset="images/logo-hero.webp" type="image/webp">
+      <img src="images/logo-hero.png" alt="Glanzfahrt Logo" class="hero-logo">
+    </picture>
     <p class="hero-eyebrow">Autowaschstraße · Lübeck</p>
     <h1>Immer <span>Glanz</span><br>auf der Fahrt</h1>
 
@@ -362,10 +387,16 @@
           <p style="color:var(--muted); font-size:0.8rem; margin-top:0.7rem;">
             📌 Wesloer Landstraße 50–70, 23566 Lübeck — hinter famila
           </p>
-          <a href="https://www.google.com/maps/place/Autowaschstra%C3%9Fe+Glanzfahrt+UG/@53.8709082,10.7470631,20z/data=!4m6!3m5!1s0x47b20a2f4dca746d:0x3f0fc5aa233064a2!8m2!3d53.8708945!4d10.7471055!16s%2Fg%2F11g8703ngq" target="_blank"
-             class="btn-primary" style="margin-top:1rem; display:inline-block;">
-            In Google Maps öffnen
-          </a>
+          <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:1rem;">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=53.8708945,10.7471055&destination_place_id=ChIJ80HK9C8KsEcRomQwI6rFDz8" target="_blank"
+               class="btn-primary" style="display:inline-flex; align-items:center; gap:0.5rem;">
+              🧭 Wegbeschreibung starten
+            </a>
+            <a href="https://www.google.com/maps/place/Autowaschstra%C3%9Fe+Glanzfahrt+UG/@53.8709082,10.7470631,20z/data=!4m6!3m5!1s0x47b20a2f4dca746d:0x3f0fc5aa233064a2!8m2!3d53.8708945!4d10.7471055!16s%2Fg%2F11g8703ngq" target="_blank"
+               class="btn-outline" style="display:inline-flex; align-items:center;">
+              In Google Maps öffnen
+            </a>
+          </div>
         </div>
       </div>
     </div>
