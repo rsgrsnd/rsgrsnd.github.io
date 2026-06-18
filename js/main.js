@@ -39,8 +39,16 @@ function closeMobileMenu() {
 
     // Back to top
     const backToTop = document.getElementById('back-to-top');
+    const footerEl = document.querySelector('footer');
+    let footerVisible = false;
+
+    const footerObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { footerVisible = e.isIntersecting; });
+    }, { threshold: 0.05 });
+    footerObs.observe(footerEl);
+
     window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 400);
+      backToTop.classList.toggle('visible', window.scrollY > 400 && !footerVisible);
     });
 
     // Animated rain drops

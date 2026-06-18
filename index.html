@@ -97,7 +97,7 @@
       <li><a href="#leistungen">Leistungen</a></li>
       <li><a href="#preise">Preise</a></li>
       <li><a href="#bewertungen">Bewertungen</a></li>
-      <!-- <li><a href="#faq">FAQ</a></li> -->
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#social">Social Media</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="#anfahrt">Anfahrt</a></li>
@@ -112,7 +112,7 @@
     <a href="#leistungen" onclick="closeMobileMenu()">Leistungen</a>
     <a href="#preise" onclick="closeMobileMenu()">Preise</a>
     <a href="#bewertungen" onclick="closeMobileMenu()">Bewertungen</a>
-    <!-- <a href="#faq">FAQ</a> -->
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="#social" onclick="closeMobileMenu()">Social Media</a>
     <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
     <a href="#anfahrt" onclick="closeMobileMenu()">Anfahrt</a>
@@ -310,7 +310,7 @@
   <div class="wash-line"></div>
 
   <!-- FAQ -->
-  <section id="faq" style="display:none;">
+  <section id="faq">
     <div class="container">
       <p class="section-label">Häufige Fragen</p>
       <h2 class="section-title">FAQ</h2>
@@ -319,45 +319,52 @@
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
-            Muss ich während der Wäsche im Auto bleiben?
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">Ja, müssen während der Wäsche im Fahrzeug sitzen bleiben. Bitte schalten Sie das Fahrzeug in den Leerlauf (Automatik: „N"), klappen Sie die Seitenspiegel ein, halten Sie das Lenkrad gerade und betätigen Sie weder Gas noch Bremse.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
             Welche Zahlungsmittel werden akzeptiert?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-answer">Wir akzeptieren Barzahlung sowie gängige EC- und Kreditkarten. Für aktuelle Informationen zu Zahlungsmöglichkeiten kontaktieren Sie uns gerne direkt.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            Was passiert, wenn mein Auto beschädigt wird?
-            <span class="faq-icon">+</span>
-          </div>
-          <div class="faq-answer">Bitte melden Sie eventuelle Schäden sofort nach der Wäsche vor Verlassen des Geländes beim Personal. Nachträgliche Meldungen können leider nicht berücksichtigt werden. Unsere AGB regeln die Haftung im Detail.</div>
+          <div class="faq-answer">Wir akzeptieren Bargeld sowie die gängigen EC- und Kreditkarten. Auch Flottenkarten!</div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
             Ist die Waschstraße für alle Fahrzeuggrößen geeignet?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-answer">Unsere Waschstraße ist für PKW und kleinere SUVs geeignet. Bitte beachten Sie die maximalen Fahrzeugmaße an der Einfahrt. Bei Unsicherheiten fragen Sie gerne unser Personal.</div>
+          <div class="faq-answer">Unsere Waschstraße ist für die meisten Pkw geeignet. Bei besonders hohen oder breiten Fahrzeugen beachten Sie bitte die angegebenen Maximalmaße.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Kann ich mit einem Cabriolet fahren?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Ja, sofern Ihr Cabriolet vom Hersteller für die Wäsche in automatischen Waschanlagen freigegeben ist und das Verdeck vollständig geschlossen ist.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Sind Elektroautos für die Waschstraße geeignet?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Ja, Elektrofahrzeuge können problemlos in unserer Waschstraße gereinigt werden.</div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
             Wie lange dauert eine Wäsche?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-answer">Eine komplette Wäsche dauert je nach Paket zwischen 3 und 6 Minuten. Wartezeiten können zu Stoßzeiten (Samstags, nach Regen) etwas länger sein.</div>
+          <div class="faq-answer">Je nach gewähltem Waschprogramm dauert eine Fahrzeugwäsche in der Regel nur wenige Minuten.</div>
         </div>
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)">
-            Kann ich mit einem Cabriolet oder Anhänger fahren?
+            Muss ich während der Wäsche im Auto bleiben?
             <span class="faq-icon">+</span>
           </div>
-          <div class="faq-answer">Cabrios sind erlaubt, sofern das Verdeck vollständig geschlossen und dicht ist. Fahrzeuge mit Anhänger können leider nicht gewaschen werden. Bitte koppeln Sie den Anhänger vorher ab.</div>
+          <div class="faq-answer">Ja, bitte bleiben Sie während des gesamten Waschvorgangs im Fahrzeug sitzen und folgen Sie den Anweisungen unserer Anlage.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Was tun, wenn ich mit dem Waschergebnis nicht zufrieden bin?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">Bitte sprechen Sie unser Team direkt vor Ort an. Wir finden gemeinsam eine schnelle und faire Lösung.</div>
         </div>
       </div>
     </div>
@@ -480,9 +487,12 @@
       <p>Telefon: <a href="tel:+4945164043">+49 451 64043</a><br>
       E-Mail: <a href="mailto:kontakt@glanz-fahrt.de">kontakt@glanz-fahrt.de</a></p>
 
+      <h2>Steuernummer</h2>
+      <p>22/291/18960</p>
+
       <h2>Umsatzsteuer-ID</h2>
       <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br>
-      [Hier bitte Ihre USt-IdNr. eintragen]</p>
+      DE413102388</p>
 
       <h2>EU-Streitschlichtung</h2>
       <p>Die Europäische Kommission stellt Informationen zur außergerichtlichen Streitbeilegung bereit:<br>
