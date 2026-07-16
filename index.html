@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glanzfahrt – Autowaschstraße Lübeck</title>
-  <meta name="description" content="Glanzfahrt – Lübecks Autowaschstraße mit intensiver Hochdruck-Vorwäsche. Vier Waschpakete von 10,50 € bis 20,00 €. Wesloer Landstraße 50–70, 23566 Lübeck.">
+  <meta name="description" content="Glanzfahrt – Autowäsche und Autowaschstraße in Lübeck mit intensiver Hochdruck-Vorwäsche. Vier Waschpakete von 10,50 € bis 20,00 €. Wesloer Landstraße 50–70, 23566 Lübeck.">
   <link rel="canonical" href="https://www.glanz-fahrt.de/">
   <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="OT5NU_rIubo-mw0tvdeuZWOOZ7VkDNY2uW3FL4IvgFI" />
 
   <!-- Open Graph / Facebook, WhatsApp, LinkedIn -->
   <meta property="og:type" content="website">
@@ -82,6 +83,72 @@
     ]
   }
   </script>
+
+  <!-- FAQPage Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Welche Zahlungsmittel werden akzeptiert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir akzeptieren Bargeld sowie die gängigen EC- und Kreditkarten. Auch Flottenkarten!"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist die Waschstraße für alle Fahrzeuggrößen geeignet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unsere Waschstraße ist für die meisten Pkw geeignet. Bei besonders hohen oder breiten Fahrzeugen beachten Sie bitte die angegebenen Maximalmaße."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich mit einem Cabriolet fahren?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, sofern Ihr Cabriolet vom Hersteller für die Wäsche in automatischen Waschanlagen freigegeben ist und das Verdeck vollständig geschlossen ist."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sind Elektroautos für die Waschstraße geeignet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, Elektrofahrzeuge können problemlos in unserer Waschstraße gereinigt werden."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert eine Wäsche?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Je nach gewähltem Waschprogramm dauert eine Fahrzeugwäsche in der Regel nur wenige Minuten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Muss ich während der Wäsche im Auto bleiben?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, bitte bleiben Sie während des gesamten Waschvorgangs im Fahrzeug sitzen und folgen Sie den Anweisungen unserer Anlage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was tun, wenn ich mit dem Waschergebnis nicht zufrieden bin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bitte sprechen Sie unser Team direkt vor Ort an. Wir finden gemeinsam eine schnelle und faire Lösung."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -120,7 +187,7 @@
     <div class="drops" id="drops"></div>
     <picture>
       <source srcset="images/logo-hero.webp" type="image/webp">
-      <img src="images/logo-hero.png" alt="Glanzfahrt – Meine Autowaschstraße Lübeck" class="hero-logo">
+      <img src="images/logo-hero.png" alt="Glanzfahrt Logo – Autowaschstraße und Waschstraße in Lübeck" class="hero-logo" width="640" height="635" fetchpriority="high">
     </picture>
     <p class="hero-eyebrow">Autowaschstraße · Lübeck</p>
     <h1>Immer <span>Glanz</span><br>auf der Fahrt</h1>
@@ -172,6 +239,10 @@
           <span class="card-badge">Beliebt</span>
         </div>
       </div>
+
+      <p style="text-align:center; margin-top:2rem;">
+        <a href="#preise" style="color:var(--accent); text-decoration:underline;">→ Alle Waschpakete &amp; Preise ansehen</a>
+      </p>
     </div>
   </section>
 
@@ -217,25 +288,29 @@
         <p style="font-size:0.78rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:1.2rem;">
           Für den <span style="color:var(--accent); font-weight:600;">Extra-Glanz</span>
         </p>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem;">
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.6rem 1rem; background:var(--bg-deep); border-radius:4px; border:1px solid var(--border);">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; align-items:stretch;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.6rem 1rem; background:var(--bg-deep); border-radius:4px; border:1px solid var(--border); min-height:48px;">
             <span style="color:var(--white); font-size:0.88rem;">Felgenreiniger</span>
             <span style="color:var(--accent); font-weight:600; white-space:nowrap;">3 €</span>
           </div>
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.6rem 1rem; background:var(--bg-deep); border-radius:4px; border:1px solid var(--border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.6rem 1rem; background:var(--bg-deep); border-radius:4px; border:1px solid var(--border); min-height:48px;">
             <span style="color:var(--white); font-size:0.88rem;">Intensivreiniger</span>
             <span style="color:var(--accent); font-weight:600; white-space:nowrap;">3 €</span>
           </div>
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.6rem 1rem; background:var(--bg-deep); border-radius:4px; border:1px solid var(--border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.6rem 1rem; background:var(--bg-deep); border-radius:4px; border:1px solid var(--border); min-height:48px;">
             <span style="color:var(--white); font-size:0.88rem;">Insektenreiniger</span>
             <span style="color:var(--accent); font-weight:600; white-space:nowrap;">3 €</span>
           </div>
-          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.6rem 1rem; background:var(--bg-deep); border-radius:4px; border:1px solid var(--border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; padding:0.6rem 1rem; background:var(--bg-deep); border-radius:4px; border:1px solid var(--border); min-height:48px;">
             <span style="color:var(--white); font-size:0.88rem;">Intensive Vorwäsche</span>
             <span style="color:var(--accent); font-weight:600; white-space:nowrap;">5 €</span>
           </div>
         </div>
       </div>
+
+      <p style="text-align:center; margin-top:2rem;">
+        Fragen zu unseren Paketen? <a href="#faq" style="color:var(--accent); text-decoration:underline;">→ Häufige Fragen ansehen</a>
+      </p>
     </div>
   </section>
 
@@ -364,6 +439,10 @@
           <div class="faq-answer">Bitte sprechen Sie unser Team direkt vor Ort an. Wir finden gemeinsam eine schnelle und faire Lösung.</div>
         </div>
       </div>
+
+      <p style="text-align:center; margin-top:2rem;">
+        Ihre Frage war nicht dabei? <a href="#kontakt" style="color:var(--accent); text-decoration:underline;">→ Kontaktieren Sie uns</a>
+      </p>
     </div>
   </section>
 
