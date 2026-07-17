@@ -10,7 +10,7 @@ function setMobileMenuOffset() {
   mobileMenu.style.top = navEl.offsetHeight + 'px';
   mobileMenu.style.maxHeight = `calc(100vh - ${navEl.offsetHeight}px)`;
 }
-setMobileMenuOffset();
+requestAnimationFrame(setMobileMenuOffset);
 window.addEventListener('resize', setMobileMenuOffset);
 
 hamburger.addEventListener('click', () => {
